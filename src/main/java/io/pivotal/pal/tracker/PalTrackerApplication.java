@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 
 import javax.sql.DataSource;
 
+
 @SpringBootApplication
 public class PalTrackerApplication {
 
@@ -13,8 +14,8 @@ public class PalTrackerApplication {
         SpringApplication.run(PalTrackerApplication.class, args);
     }
 
-    @Bean
-    public WelcomeService welcomeService(){
-        return new WelcomeService();
-    }
+//    @Bean
+//    public WelcomeService welcomeService(){
+//        return new WelcomeService();
+//    }
 }
