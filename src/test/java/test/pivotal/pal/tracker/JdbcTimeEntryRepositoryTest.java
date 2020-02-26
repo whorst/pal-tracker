@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.sql.Date;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
@@ -35,7 +36,7 @@ public class JdbcTimeEntryRepositoryTest {
     }
 
     @Test
-    public void createInsertsATimeEntryRecord() {
+    public void createInsertsATimeEntryRecord() throws SQLException {
         TimeEntry newTimeEntry = new TimeEntry(123, 321, LocalDate.parse("2017-01-09"), 8);
         TimeEntry entry = subject.create(newTimeEntry);
 
@@ -49,7 +50,7 @@ public class JdbcTimeEntryRepositoryTest {
     }
 
     @Test
-    public void createReturnsTheCreatedTimeEntry() {
+    public void createReturnsTheCreatedTimeEntry() throws SQLException {
         TimeEntry newTimeEntry = new TimeEntry(123, 321, LocalDate.parse("2017-01-09"), 8);
         TimeEntry entry = subject.create(newTimeEntry);
 

@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class TimeEntryControllerTest {
     }
 
     @Test
-    public void testCreate() {
+    public void testCreate() throws SQLException {
         long projectId = 123L;
         long userId = 456L;
         TimeEntry timeEntryToCreate = new TimeEntry(projectId, userId, LocalDate.parse("2017-01-08"), 8);
